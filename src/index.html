@@ -1,14 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <title>Titre de la page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js"></script>
-</head>
-<body>
-  ...
-  ...
-</body>
+  <head>
+    <title>Titre de la page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- Button to open the modal -->
+    <button
+      onclick="document.getElementById('id01').style.display='block'"
+      class="nicebutton"
+    >
+      Je m'inscris
+    </button>
+
+    <!-- The Modal (contains the Sign Up form) -->
+    <div id="id01" class="modal">
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        class="close"
+        title="Close Modal"
+        >X</span
+      >
+      <form class="modal-content" action="formsuccess.php" method="POST">
+        <div class="container">
+          <h1>S'inscrire</h1>
+          <p>Remplissez ces informations pour créer votre compte.</p>
+          <hr />
+
+          <label for="name"><b>Prénom NOM</b></label>
+          <input type="password" placeholder="Aude JAVEL" name="psw" required />
+
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="exemple@gmail.com"
+            name="email"
+            required
+          />
+
+          <label for="psw"><b>Mot de passe</b></label>
+          <input type="password" placeholder="!crepe27" name="psw" required />
+
+          <label for="psw-repeat"><b>Confirmer Mot de passe</b></label>
+          <input
+            type="password"
+            placeholder="!crepe27"
+            name="psw-repeat"
+            required
+          />
+
+          <label>
+            <input
+              type="checkbox"
+              checked="checked"
+              name="remember"
+              style="margin-bottom:15px"
+            />
+            Se souvenir de moi
+          </label>
+
+          <p>
+            En créant mon compte, j'accepte les
+            <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+          </p>
+
+          <div class="clearfix">
+            <button
+              type="button"
+              onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtn"
+            >
+              Retour
+            </button>
+            <button type="submit" class="signup">Je valide</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <?php echo "STEAK"; ?>
+  </body>
 </html>
